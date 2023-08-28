@@ -63,7 +63,6 @@ const SearchBox: React.FC<SearchBoxProps> = ({
 
   const handleSearch = () => {
     setLoading(true);
-
     // Perform input validation
     if (
       !departure ||
@@ -71,6 +70,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({
       !departureDate ||
       (!isOneWay && !returnDepartureDate)
     ) {
+      setLoading(false);
       alert("Please fill in all fields");
       return;
     }
